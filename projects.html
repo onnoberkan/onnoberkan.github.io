@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Onno Berkan | Research and Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +49,8 @@
             transition: all 0.2s;
         }
         .nav-link:hover, .nav-link.active { border-color: #9ca3af; background: #f9fafb; }
+        .btn-email { background-color: var(--text-color); color: #ffffff; border-color: var(--text-color); }
+        .btn-email:hover { background-color: #374151; color: #ffffff; border-color: #374151; }
 
         header { margin-bottom: 32px; }
         h1 { font-family: 'Asap', sans-serif; font-size: 2.5rem; font-weight: 700; }
@@ -58,6 +61,7 @@
         .card-title { font-family: 'Asap', sans-serif; font-size: 1.25rem; font-weight: 600; }
         .card-subtitle { color: var(--text-muted); font-size: 0.95rem; }
 
+        /* Media Containers */
         .project-media { margin-top: 14px; width: 100%; }
         .project-media img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; border: 1px solid var(--card-border); }
 
@@ -84,7 +88,7 @@
                 <a href="projects.html" class="nav-link active">Research and Projects</a>
             </div>
             <div class="nav-group">
-                <a href="mailto:berkan@usc.edu" class="nav-link">✉️ berkan@usc.edu</a>
+                <a href="mailto:berkan@usc.edu" class="nav-link btn-email">Email</a>
                 <a href="https://github.com/onnoberkan" target="_blank" class="nav-link">GitHub ↗</a>
                 <a href="https://www.linkedin.com/in/omer-onno-berkan-b7110717a/" target="_blank" class="nav-link">LinkedIn ↗</a>
             </div>
@@ -93,14 +97,14 @@
 
     <div class="wrapper">
         <header>
-            <h1 id="author-name">Onno Berkan</h1>
-            <p class="subtitle" id="author-tagline">M.S. in Electrical Engineering & B.S. in Computational Neuroscience | USC</p>
+            <h1>Onno Berkan</h1>
+            <p class="subtitle">M.S. in Electrical Engineering & B.S. in Computational Neuroscience | USC</p>
         </header>
 
         <section>
             <div class="section-title">Ongoing Work</div>
             <div class="card">
-                <ul id="ongoing-work-list">
+                <ul>
                     <li>Cognitive maps outside the hippocampus (see Piray Lab for details)</li>
                     <li>EEG Mood Detection (see Neural Systems Engineering & Information Processing Lab)</li>
                     <li>Coursework: EE 599 (Reinforcement Learning and Large Language Models), EE 510 (Linear Algebra)</li>
@@ -125,8 +129,16 @@
                 <div class="project-media">
                     <img src="assets/images/cursor-bci.jpg" alt="EEG Cursor Control BCI" onerror="this.style.display='none'">
                 </div>
+                
+                <!-- Fixed YouTube Player with Error 153 Resolution -->
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="EEG Cursor Control Demo" allowfullscreen></iframe>
+                    <iframe 
+                        src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID" 
+                        title="EEG Cursor Control Demo" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
 
@@ -219,17 +231,5 @@
 
     </div>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedContent = localStorage.getItem('onno_portfolio_content');
-            if(savedContent) {
-                const data = JSON.parse(savedContent);
-                Object.keys(data).forEach(id => {
-                    const el = document.getElementById(id);
-                    if(el) el.innerHTML = data[id];
-                });
-            }
-        });
-    </script>
 </body>
 </html>

@@ -49,6 +49,8 @@
             transition: all 0.2s;
         }
         .nav-link:hover, .nav-link.active { border-color: #9ca3af; background: #f9fafb; }
+        .btn-email { background-color: var(--text-color); color: #ffffff; border-color: var(--text-color); }
+        .btn-email:hover { background-color: #374151; color: #ffffff; border-color: #374151; }
 
         header { margin-bottom: 32px; }
         h1 { font-family: 'Asap', sans-serif; font-size: 2.5rem; font-weight: 700; }
@@ -73,7 +75,7 @@
                 <a href="projects.html" class="nav-link">Research and Projects →</a>
             </div>
             <div class="nav-group">
-                <a href="mailto:berkan@usc.edu" class="nav-link">✉️ berkan@usc.edu</a>
+                <a href="mailto:berkan@usc.edu" class="nav-link btn-email">Email</a>
                 <a href="https://github.com/onnoberkan" target="_blank" class="nav-link">GitHub ↗</a>
                 <a href="https://www.linkedin.com/in/omer-onno-berkan-b7110717a/" target="_blank" class="nav-link">LinkedIn ↗</a>
             </div>
@@ -82,26 +84,26 @@
 
     <div class="wrapper">
         <header>
-            <h1 id="author-name">Onno Berkan</h1>
-            <p class="subtitle" id="author-tagline">M.S. in Electrical Engineering & B.S. in Computational Neuroscience | USC</p>
+            <h1>Onno Berkan</h1>
+            <p class="subtitle">M.S. in Electrical Engineering & B.S. in Computational Neuroscience | USC</p>
         </header>
 
         <section>
             <div class="section-title">About Me</div>
             <div class="card">
-                <p id="about-text-1">
+                <p>
                     Hi, my name is Onno. I hold a B.S. in Computational Neuroscience and am currently completing my M.S. in Electrical Engineering at the University of Southern California.
                 </p>
                 <br>
-                <p id="about-text-2">
+                <p>
                     My primary interest is in Brain-Computer Interfaces. I’ve led multiple EEG-based BCI projects in the past, with two having competed in the California Neurotechnology Conference BCI Competition, and am currently working on another EEG BCI with clinical applications for Dr. Maryam Shanechi’s lab. Outside of BCIs, I have several years of experience working in an RL lab (Dr. Payam Piray), modeling cognitive maps in the hippocampus and surrounding structures.
                 </p>
                 <br>
-                <p id="about-text-3">
+                <p>
                     My end goal is to have a better understanding of the brain. I am passionate about signal processing and neural decoding, as well as the mathematical foundations of it all. I enjoy applied projects that have the potential to improve people’s lives. I enjoy working in teams.
                 </p>
                 <br>
-                <p id="about-text-4">
+                <p>
                     If you work in a really cool lab or startup, let me know. Have a great day!
                 </p>
             </div>
@@ -147,17 +149,5 @@
         </section>
     </div>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedContent = localStorage.getItem('onno_portfolio_content');
-            if(savedContent) {
-                const data = JSON.parse(savedContent);
-                Object.keys(data).forEach(id => {
-                    const el = document.getElementById(id);
-                    if(el) el.innerHTML = data[id];
-                });
-            }
-        });
-    </script>
 </body>
 </html>
