@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onno Berkan | About Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111827;
+            --text-muted: #4b5563;
+            --card-border: #e5e7eb;
+            --badge-bg: #f3f4f6;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; line-height: 1.6; padding: 0 20px 60px 20px; }
+        .wrapper { max-width: 800px; margin: 0 auto; }
+
+        .top-navbar {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--card-border);
+            margin-bottom: 32px;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .nav-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .nav-link {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Asap', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s;
+        }
+        .nav-link:hover, .nav-link.active { border-color: #9ca3af; background: #f9fafb; }
+
+        header { margin-bottom: 32px; }
+        h1 { font-family: 'Asap', sans-serif; font-size: 2.5rem; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-top: 4px; }
+        .section-title { font-family: 'Asap', sans-serif; font-size: 1.5rem; font-weight: 700; margin: 40px 0 16px 0; border-bottom: 1px solid var(--card-border); padding-bottom: 8px; }
+        .card { background: transparent; border: none; padding: 0; margin-bottom: 28px; }
+        .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 6px; }
+        .card-title { font-family: 'Asap', sans-serif; font-size: 1.25rem; font-weight: 600; }
+        .card-subtitle { color: var(--text-muted); font-size: 0.95rem; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        .badge { background: var(--badge-bg); border: 1px solid var(--card-border); color: var(--text-color); padding: 4px 12px; border-radius: 16px; font-size: 0.85rem; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+
+    <div class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-group">
+                <a href="index.html" class="nav-link active">About Me</a>
+                <a href="projects.html" class="nav-link">Research and Projects →</a>
+            </div>
+            <div class="nav-group">
+                <a href="mailto:berkan@usc.edu" class="nav-link">✉️ berkan@usc.edu</a>
+                <a href="https://github.com/onnoberkan" target="_blank" class="nav-link">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/omer-onno-berkan-b7110717a/" target="_blank" class="nav-link">LinkedIn ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <header>
+            <h1 id="author-name">Onno Berkan</h1>
+            <p class="subtitle" id="author-tagline">M.S. in Electrical Engineering & B.S. in Computational Neuroscience | USC</p>
+        </header>
+
+        <section>
+            <div class="section-title">About Me</div>
+            <div class="card">
+                <p id="about-text-1">
+                    Hi, my name is Onno. I hold a B.S. in Computational Neuroscience and am currently completing my M.S. in Electrical Engineering at the University of Southern California.
+                </p>
+                <br>
+                <p id="about-text-2">
+                    My primary interest is in Brain-Computer Interfaces. I’ve led multiple EEG-based BCI projects in the past, with two having competed in the California Neurotechnology Conference BCI Competition, and am currently working on another EEG BCI with clinical applications for Dr. Maryam Shanechi’s lab. Outside of BCIs, I have several years of experience working in an RL lab (Dr. Payam Piray), modeling cognitive maps in the hippocampus and surrounding structures.
+                </p>
+                <br>
+                <p id="about-text-3">
+                    My end goal is to have a better understanding of the brain. I am passionate about signal processing and neural decoding, as well as the mathematical foundations of it all. I enjoy applied projects that have the potential to improve people’s lives. I enjoy working in teams.
+                </p>
+                <br>
+                <p id="about-text-4">
+                    If you work in a really cool lab or startup, let me know. Have a great day!
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">University of Southern California (USC)</div>
+                    <div class="card-subtitle">Los Angeles, CA</div>
+                </div>
+                <ul>
+                    <li>M.S. in Electrical Engineering (Aug 2025 - Dec 2026)</li>
+                    <li>B.S. in Computational Neuroscience (Aug 2022 - May 2026)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="card">
+                <strong style="color: var(--text-muted);">Programming & ML:</strong>
+                <div class="skills-grid">
+                    <span class="badge">Python</span><span class="badge">MATLAB</span><span class="badge">PyTorch</span><span class="badge">TensorFlow</span><span class="badge">Scikit-Learn</span>
+                </div>
+                <br>
+                <strong style="color: var(--text-muted);">Neuroscience Libraries:</strong>
+                <div class="skills-grid">
+                    <span class="badge">MNE</span><span class="badge">EEGLAB</span><span class="badge">Nilearn</span><span class="badge">FSL</span><span class="badge">LSL</span><span class="badge">PsychoPy</span>
+                </div>
+                <br>
+                <strong style="color: var(--text-muted);">Signal Processing & Data Preprocessing:</strong>
+                <div class="skills-grid">
+                    <span class="badge">PCA</span><span class="badge">ICA</span><span class="badge">CCA</span><span class="badge">ASR</span><span class="badge">Temporal & Spectral Feature Extraction</span>
+                </div>
+                <br>
+                <strong style="color: var(--text-muted);">Languages:</strong>
+                <div class="skills-grid">
+                    <span class="badge">English</span><span class="badge">Turkish</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedContent = localStorage.getItem('onno_portfolio_content');
+            if(savedContent) {
+                const data = JSON.parse(savedContent);
+                Object.keys(data).forEach(id => {
+                    const el = document.getElementById(id);
+                    if(el) el.innerHTML = data[id];
+                });
+            }
+        });
+    </script>
+</body>
+</html>

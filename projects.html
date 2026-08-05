@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onno Berkan | Research and Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111827;
+            --text-muted: #4b5563;
+            --card-border: #e5e7eb;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; line-height: 1.6; padding: 0 20px 60px 20px; }
+        .wrapper { max-width: 800px; margin: 0 auto; }
+
+        .top-navbar {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--card-border);
+            margin-bottom: 32px;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .nav-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .nav-link {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Asap', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s;
+        }
+        .nav-link:hover, .nav-link.active { border-color: #9ca3af; background: #f9fafb; }
+
+        header { margin-bottom: 32px; }
+        h1 { font-family: 'Asap', sans-serif; font-size: 2.5rem; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-top: 4px; }
+        .section-title { font-family: 'Asap', sans-serif; font-size: 1.5rem; font-weight: 700; margin: 40px 0 16px 0; border-bottom: 1px solid var(--card-border); padding-bottom: 8px; }
+        .card { background: transparent; border: none; padding: 0; margin-bottom: 28px; }
+        .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 6px; }
+        .card-title { font-family: 'Asap', sans-serif; font-size: 1.25rem; font-weight: 600; }
+        .card-subtitle { color: var(--text-muted); font-size: 0.95rem; }
+
+        .project-media { margin-top: 14px; width: 100%; }
+        .project-media img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; border: 1px solid var(--card-border); }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            margin-top: 12px;
+        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+
+    <div class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-group">
+                <a href="index.html" class="nav-link">← About Me</a>
+                <a href="projects.html" class="nav-link active">Research and Projects</a>
+            </div>
+            <div class="nav-group">
+                <a href="mailto:berkan@usc.edu" class="nav-link">✉️ berkan@usc.edu</a>
+                <a href="https://github.com/onnoberkan" target="_blank" class="nav-link">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/omer-onno-berkan-b7110717a/" target="_blank" class="nav-link">LinkedIn ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <header>
+            <h1 id="author-name">Onno Berkan</h1>
+            <p class="subtitle" id="author-tagline">M.S. in Electrical Engineering & B.S. in Computational Neuroscience | USC</p>
+        </header>
+
+        <section>
+            <div class="section-title">Ongoing Work</div>
+            <div class="card">
+                <ul id="ongoing-work-list">
+                    <li>Cognitive maps outside the hippocampus (see Piray Lab for details)</li>
+                    <li>EEG Mood Detection (see Neural Systems Engineering & Information Processing Lab)</li>
+                    <li>Coursework: EE 599 (Reinforcement Learning and Large Language Models), EE 510 (Linear Algebra)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Neurotech@USC</div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">EEG Cursor Control BCI (2025-26)</div>
+                    <a href="https://github.com/onnoberkan" target="_blank" class="card-subtitle" style="color: var(--text-color);">[GitHub Link]</a>
+                </div>
+                <ul>
+                    <li>Developed a real-time mind-controlled cursor based on four-class motor imagery, capable of moving in two dimensions.</li>
+                    <li>&gt;85% within-session and &gt;75% cross-participant accuracy using a Riemannian classifier, achieving &lt;0.2s latency and rapid calibration to new users.</li>
+                    <li>Designed tasks, analyzed data, and adapted offline system to online use.</li>
+                    <li>Demonstrated live at the 2026 California Neurotechnology Conference BCI Competition, finished second place, project supervised by Dr. Vasileios Christopoulos.</li>
+                </ul>
+                <div class="project-media">
+                    <img src="assets/images/cursor-bci.jpg" alt="EEG Cursor Control BCI" onerror="this.style.display='none'">
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="EEG Cursor Control Demo" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">ErrP Detector (2025-26)</div>
+                    <a href="https://github.com/onnoberkan" target="_blank" class="card-subtitle" style="color: var(--text-color);">[GitHub Link]</a>
+                </div>
+                <ul>
+                    <li>ErrPs are your brain’s response to perceiving an error, which can be used as a reinforcement signal in training an RL agent or be used in real-time as a correction mechanism to auto-identify errors and improve model outputs.</li>
+                    <li>Achieved &gt;80% within-session and &gt;75% cross-participant mean detection accuracy with balanced classes and feedback &lt;1.5s after model prediction.</li>
+                    <li>Designed tasks, analyzed data, and tested RL paradigms.</li>
+                </ul>
+                <div class="project-media">
+                    <img src="assets/images/errp-detector.jpg" alt="ErrP Detector" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">fMRI ADHD Diagnosis (2025-26)</div>
+                </div>
+                <ul>
+                    <li>Tested several linear learners as well as CNNs on a public ADHD dataset.</li>
+                    <li>This was a teaching project where I helped a dozen underclassmen for two months, leading many to develop their first Comp. Neuro project while learning about machine learning for the first time.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">EEG Mental Fatigue Quantifier (2024-25)</div>
+                    <a href="https://github.com/onnoberkan" target="_blank" class="card-subtitle" style="color: var(--text-color);">[GitHub Link]</a>
+                </div>
+                <ul>
+                    <li>Built a Brain-Computer Interface to quantify mental fatigue using real-time EEG signals collected from OpenBCI hardware.</li>
+                    <li>96% across-session and 85% across-participant binary accuracy; 83% & 65% 3-class accuracy using SVM.</li>
+                    <li>Led research, acted as system engineer.</li>
+                    <li>Demonstrated live at the 2025 California Neurotechnology Conference BCI Competition.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Piray Lab</div>
+            <div class="card">
+                <div class="card-title">Cognitive Maps (2024-Present)</div>
+                <ul>
+                    <li>Analyzing fMRI data to develop novel models of cognitive map representations in and around the hippocampus, challenging the graph-/predictive map-based theories of spatial representations.</li>
+                    <li>Working under Dr. Payam Piray.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title">Learning Under Uncertainty (2024)</div>
+                <ul>
+                    <li>Previously worked alongside a PhD student, investigating the influence of two types of noise on decision making under uncertainty using a Linear Reinforcement Learning Model.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Neural Systems Engineering & Information Processing Lab</div>
+            <div class="card">
+                <div class="card-title">EEG For Mood Detection (2026-Present)</div>
+                <ul>
+                    <li>Collecting and analyzing high-density saline-EEG data to create a mood classifier that will work out-of-the-box in a clinical setting, as well as testing out novel interactive experimental tasks.</li>
+                    <li>Working under Dr. Maryam Shanechi.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Course Projects</div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Kalman Filter for Cross-Session Alignment (Fall 2025)</div>
+                    <a href="https://github.com/onnoberkan" target="_blank" class="card-subtitle" style="color: var(--text-color);">[GitHub Link]</a>
+                </div>
+                <ul>
+                    <li>Built on data from Willet et al.’s RNN-based speech BCI, demonstrated that the use of Kalman Filters can allow for cross-session (cross-day) neural space alignment, a latent space which can be exploited by linear methods.</li>
+                    <li>Led to a 34% increase in accuracy with LDA, allowing for faster and more efficient calibration.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title">GNNs for Recommendation Algorithms (Summer 2024)</div>
+                <ul>
+                    <li>Interned at a high-tech marketing firm looking to develop recommendation algorithms for clients, established a foundation for them to get into GNN-based systems.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedContent = localStorage.getItem('onno_portfolio_content');
+            if(savedContent) {
+                const data = JSON.parse(savedContent);
+                Object.keys(data).forEach(id => {
+                    const el = document.getElementById(id);
+                    if(el) el.innerHTML = data[id];
+                });
+            }
+        });
+    </script>
+</body>
+</html>

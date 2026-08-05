@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Onno Berkan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f9fafb; color: #111827; padding: 40px 20px; }
+        .admin-card { max-width: 750px; margin: 0 auto 24px auto; background: #ffffff; padding: 24px; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        h3 { margin-bottom: 12px; font-size: 1.2rem; }
+        p { color: #4b5563; margin-bottom: 16px; font-size: 0.95rem; }
+        .btn { background: #4f46e5; color: white; border: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; margin-right: 8px; text-decoration: none; display: inline-block; }
+        .btn:hover { background: #4338ca; }
+        .btn-danger { background: #ef4444; }
+        .btn-danger:hover { background: #dc2626; }
+        .input-group { margin-bottom: 16px; }
+        label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+        input[type="text"], textarea { width: 100%; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-family: inherit; }
+        textarea { height: 80px; }
+    </style>
+</head>
+<body>
+
+    <div class="admin-card">
+        <h1>Global Admin Portal</h1>
+        <p>Edit content for both <strong>index.html</strong> (About Me) and <strong>projects.html</strong> (Research & Projects) simultaneously.</p>
+        <button class="btn" onclick="saveAdminData()">💾 Save All Content</button>
+        <button class="btn btn-danger" onclick="resetDefaults()">🔄 Reset to Defaults</button>
+        <a href="index.html" class="btn" style="background:#374151;">View About Page</a>
+        <a href="projects.html" class="btn" style="background:#374151;">View Projects Page</a>
+    </div>
+
+    <!-- INDEX.HTML EDIT CONTROLS -->
+    <div class="admin-card">
+        <h3>About Me Page (index.html)</h3>
+        <div class="input-group">
+            <label>Name</label>
+            <input type="text" id="author-name" value="Onno Berkan">
+        </div>
+        <div class="input-group">
+            <label>Tagline Subtitle</label>
+            <input type="text" id="author-tagline" value="M.S. in Electrical Engineering & B.S. in Computational Neuroscience | USC">
+        </div>
+        <div class="input-group">
+            <label>About Me Paragraph 1</label>
+            <textarea id="about-text-1">Hi, my name is Onno. I hold a B.S. in Computational Neuroscience and am currently completing my M.S. in Electrical Engineering at the University of Southern California.</textarea>
+        </div>
+    </div>
+
+    <!-- PROJECTS.HTML EDIT CONTROLS -->
+    <div class="admin-card">
+        <h3>Research & Projects Page (projects.html)</h3>
+        <div class="input-group">
+            <label>Ongoing Work Items (HTML formatted)</label>
+            <textarea id="ongoing-work-list" style="height: 110px;"><li>Cognitive maps outside the hippocampus (see Piray Lab for details)</li>
+<li>EEG Mood Detection (see Neural Systems Engineering & Information Processing Lab)</li>
+<li>Coursework: EE 599 (Reinforcement Learning and Large Language Models), EE 510 (Linear Algebra)</li></textarea>
+        </div>
+    </div>
+
+    <script>
+        // Load stored data into input fields
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedContent = localStorage.getItem('onno_portfolio_content');
+            if(savedContent) {
+                const data = JSON.parse(savedContent);
+                Object.keys(data).forEach(id => {
+                    const input = document.getElementById(id);
+                    if(input) input.value = data[id];
+                });
+            }
+        });
+
+        // Save input fields to shared localStorage
+        function saveAdminData() {
+            const data = {};
+            document.querySelectorAll('input[id], textarea[id]').forEach((el) => {
+                data[el.id] = el.value;
+            });
+            localStorage.setItem('onno_portfolio_content', JSON.stringify(data));
+            alert('Updates published to index.html and projects.html successfully!');
+        }
+
+        function resetDefaults() {
+            if(confirm('Are you sure you want to clear saved edits?')) {
+                localStorage.removeItem('onno_portfolio_content');
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
